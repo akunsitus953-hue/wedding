@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wedding Invitation - Alex & Syanti</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+    :root {
+    --gold: #C9A84C;
+    --gold-light: #E2C97E;
+    --gold-dark: #9A7A2E;
+    --cream: #FAF6EE;
+    --cream-dark: #F0E8D5;
+    --deep: #1C1208;
+    --brown: #4A3520;
+    --brown-light: #6B5040;
+    --white: #FEFCF7;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body {
+    background: var(--cream);
+    color: var(--brown);
+    font-family: 'EB Garamond', serif;
+    overflow-x: hidden;
+  }
+
+  /* ── COVER / HERO ── */
+  #cover {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--deep);
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  #cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 100%, rgba(201,168,76,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.10) 0%, transparent 50%);
+  }
+
+  .cover-ornament {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .cover-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeInUp 1.4s ease both;
+  }
+
+  .cover-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+  }
+
+  .cover-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+
+  .cover-names .and-sym {
+    display: block;
+    font-size: 0.5em;
+    color: var(--gold);
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  .cover-date {
+    margin-top: 2.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+  }
+
+  .cover-divider {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.5rem auto;
+  }
+
+  .open-btn {
+    margin-top: 3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 0.9rem 2.2rem;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.4s ease;
+    animation: pulse 2.5s ease infinite;
+  }
+
+  .open-btn:hover {
+    background: rgba(201,168,76,0.12);
+    border-color: var(--gold);
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  /* ── MAIN CONTENT ── */
+  #main {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  #main.visible {
+    display: block;
+    opacity: 1;
+  }
+ 
+  /* ── SECTIONS ── */
+  section {
+    padding: 6rem 1.5rem;
+    position: relative;
+  }
+
+  .section-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+ 
+  .section-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--deep);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+ 
+  .section-title em {
+    color: var(--gold-dark);
+    font-style: italic;
+  }
+ 
+  .gold-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.5rem auto;
+  }
+
+  .body-text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--brown-light);
+    font-style: italic;
+  }
+ 
+  /* ── BISMILLAH SECTION ── */
+  #bismillah {
+    background: var(--deep);
+    padding: 5rem 1.5rem;
+    text-align: center;
+  }
+
+  .bismillah-arabic {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+ 
+  .bismillah-trans {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── COUPLE ── */
+  #couple {
+    background: var(--white);
+  }
+ 
+  .couple-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+ 
+  .couple-card {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .couple-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 2px solid var(--gold);
+    background: var(--cream-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    font-style: italic;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .couple-avatar::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+ 
+  .couple-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: var(--deep);
+    margin-bottom: 0.3rem;
+  }
+
+  .couple-parent {
+    font-size: 0.9rem;
+    color: var(--brown-light);
+    line-height: 1.6;
+  }
+ 
+  .couple-parent strong {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .couple-ampersand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  /* ── EVENT DETAILS ── */
+  #event {
+    background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+  }
+ 
+  .event-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+ 
+  .event-card {
+    background: var(--white);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+ 
+  .event-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 40px; height: 2px;
+    background: var(--gold);
+  }
+ 
+  .event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(28,18,8,0.10);
+  }
+ 
+  .event-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+ 
+  .event-type {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+ 
+  .event-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--deep);
+    margin-bottom: 1rem;
+  }
+ 
+  .event-info {
+    font-size: 0.95rem;
+    color: var(--brown-light);
+    line-height: 1.8;
+  }
+ 
+  .event-info strong {
+    display: block;
+    color: var(--brown);
+    font-weight: 500;
+  }
+ 
+  /* ── COUNTDOWN ── */
+  #countdown {
+    background: var(--deep);
+    padding: 6rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  #countdown::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.15) 0%, transparent 70%);
+  }
+ 
+  #countdown .section-tag { color: var(--gold-light); }
+  #countdown .section-title { color: var(--white); }
+ 
+  .countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+ 
+  .countdown-box {
+    min-width: 100px;
+    padding: 1.5rem 1rem;
+    border: 1px solid rgba(201,168,76,0.35);
+    background: rgba(201,168,76,0.05);
+    text-align: center;
+    position: relative;
+  }
+ 
+  .countdown-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+ 
+  .countdown-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    display: block;
+  }
+ 
+  .countdown-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+
+  /* ── GALLERY ── */
+  #gallery {
+    background: var(--white);
+  }
+ 
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+ 
+  .gallery-item {
+    background: var(--cream-dark);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+ 
+  .gallery-item:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+ 
+  .gallery-item:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+ 
+  .gallery-placeholder {
+    width: 100%;
+    padding-top: 75%;
+    position: relative;
+    background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+ 
+  .gallery-item:first-child .gallery-placeholder { padding-top: 50%; }
+  .gallery-item:nth-child(3) .gallery-placeholder { padding-top: 155%; }
+ 
+  .gallery-placeholder-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.5;
+    gap: 0.5rem;
+  }
+ 
+  .gallery-placeholder-inner span { font-size: 2rem; }
+ 
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(201,168,76,0.2);
+    pointer-events: none;
+  }
+ 
+  .gallery-item:hover .gallery-placeholder-inner {
+    opacity: 0.8;
+    transform: scale(1.02);
+    transition: all 0.4s ease;
+  }
+ 
+  .gallery-caption {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-align: center;
+    margin-top: 1.5rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+  }
+ 
+  /* ── RSVP ── */
+  #rsvp {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+  }
+ 
+  .rsvp-form {
+    max-width: 560px;
+    margin: 3rem auto 0;
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    border: 1px solid rgba(201,168,76,0.25);
+    position: relative;
+  }
+ 
+  .rsvp-form::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 2px;
+    background: var(--gold);
+  }
+ 
+  .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+ 
+  .form-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+ 
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    background: var(--cream);
+    color: var(--brown);
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    -webkit-appearance: none;
+  }
+ 
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+    background: var(--white);
+  }
+ 
+  .form-textarea { resize: vertical; min-height: 90px; }
+ 
+  .form-radio-group {
+    display: flex;
+    gap: 1rem;
+  }
+ 
+  .form-radio {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    color: var(--brown-light);
+  }
+ 
+  .form-radio input { display: none; }
+  .form-radio.selected {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+    color: var(--brown);
+  }
+ 
+  .form-radio .radio-icon { font-size: 1.1rem; }
+ 
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--deep);
+    color: var(--gold);
+    border: 1px solid var(--gold-dark);
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+  }
+ 
+  .submit-btn:hover {
+    background: var(--gold-dark);
+    color: var(--white);
+  }
+ 
+  .rsvp-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    color: var(--brown);
+  }
+ 
+  .rsvp-success .check { font-size: 3rem; color: var(--gold); margin-bottom: 1rem; }
+  .rsvp-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--deep);
+    margin-bottom: 0.5rem;
+  }
+ 
+  /* ── MAP ── */
+  #map-section {
+    background: var(--white);
+    padding: 6rem 1.5rem;
+  }
+ 
+  .map-wrapper {
+    max-width: 780px;
+    margin: 3rem auto 0;
+    position: relative;
+    border: 1px solid rgba(201,168,76,0.3);
+    overflow: hidden;
+  }
+ 
+  .map-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    z-index: 1;
+  }
+ 
+  .map-wrapper iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+    display: block;
+    filter: sepia(20%) saturate(90%);
+  }
+ 
+  .map-address {
+    background: var(--deep);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+ 
+  .map-venue {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-style: italic;
+  }
+ 
+  .map-addr-text {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 0.2rem;
+  }
+ 
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--gold-dark);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+ 
+  .map-btn:hover {
+    background: var(--gold-dark);
+    color: var(--white);
+  }
+ 
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep);
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+ 
+  .footer-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: var(--white);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+ 
+  .footer-names span { color: var(--gold); font-style: italic; }
+ 
+  .footer-msg {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.45);
+    font-style: italic;
+    margin-top: 1rem;
+  }
+ 
+  .footer-copy {
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    color: rgba(201,168,76,0.4);
+    text-transform: uppercase;
+  }
+ 
+  /* ── DECORATIVE SVG ORNAMENTS ── */
+  .ornament {
+    display: block;
+    margin: 0 auto 1.5rem;
+    opacity: 0.65;
+  }
+ 
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+ 
+  .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+ 
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ 
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--deep); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+ 
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .couple-grid { grid-template-columns: 1fr; text-align: center; }
+    .couple-ampersand { font-size: 3rem; }
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .gallery-item:first-child { grid-column: 1 / 3; }
+    .gallery-item:nth-child(3) { grid-column: 1 / 3; grid-row: auto; }
+    .gallery-item:nth-child(3) .gallery-placeholder { padding-top: 55%; }
+    .rsvp-form { padding: 2rem 1.5rem; }
+    .map-address { flex-direction: column; text-align: center; }
+    .countdown-box { min-width: 75px; }
+    .countdown-num { font-size: 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ COVER ═══════════════════ -->
+<div id="cover" onclick="openInvitation()">
+    <svg class="cover-ornament" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!--Corner ornament -->
+        <g opacity="0.35" stroke="#C9A84C" fill="none" stroke-width="0.8">
+            <path d="M40,40 L120,40 L120,48 M40,40 L40,120 L48,120"/>
+            <path d="M760,40 L680,40 L680,48 M760,40 L760,120 L752,120"/>
+            <path d="M40,860 L120,860 L120,852 M40,860 L40,780 L48,780"/>
+            <path d="M760,860 L680,860 L680,852 M760,860 L760,780 L752,780"/>
+        </g>
+        <!-- Center top ornament -->
+        <g transform="translate(400, 80)" opacity="0.4" fill="#C9A84C">
+            <polygon points="0,-12 3,-4 12,-4 5,2 8,10 0,5 -8,10 -5,2 -12,-4 -3,-4" />
+        </g>
+        <!-- Center bottom ornament -->
+        <g transform="translate(400, 820)" opacity="0.4" fill="#C9A84C">
+            <polygon points="0,-12 3,-4 12,-4 5,2 8,10 0,5 -8,10 -5,2 -12,-4 -3,-4" />
+        </g>
+        <!-- Thin border lines -->
+        <rect x="25" y="25" width="750" height="850" stroke="#C9A84C" stroke-width="0.5" fill="none" opacity="0.15"/>
+        <rect x="35" y="35" width="730" height="830" stroke="#C9A84C" stroke-width="0.3" fill="none" opacity="0.1"/>
+    </svg>
+
+    <div class="cover-content">
+        <p class="cover-label">Wedding Invitation</p>
+        <svg width="180" height="30" viewBox="0 0 180 30" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 2rem; opacity: 0.5;">
+            <line x1="0" y1="15" x2="70" y2="15" stroke="#C9A84C" stroke-width="0.7"/>
+            <polygon point="90,5 95,15 90,25 85,15" fill="#C9A84C" opacity="0.8"/>
+            <line x1="110" y1="15" x2="180" y2="15" stroke="#C9A84C" stroke-width="0.7"/>
+        </svg>
+
+        <h1 class="cover-names">
+            Alex Hidayatullah
+            <span class="and-sym">&</span>
+            Syanti Royani
+        </h1>
+
+        <div class="cover-divider"></div>
+        
+        <p class="cover-date">Minggu, 31 Mei 2026</p>
+
+        <button class="open-btn" onclick="openInvitation()">
+            ✦ Buka Undangan ✦
+        </button>
+    </div>
+</div>
+
+<!-- ═══════════════════ MAIN CONTENT ═══════════════════ -->
+<div id="main">
+    <!-- BISMILLAH -->
+    <section id="bismillah">
+        <div class="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+        <div class="cover-divider" style="margin:1rem auto;"></div>
+        <p class="bismillah-trans">Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang</p>
+    </section>
+
+    <!-- COUPLE -->
+    <section id="couple">
+        <div class="section-inner">
+            <span class="section-tag reveal">Kami yang berbahagia</span>
+
+            <svg class="ornament reveal" width="200" height="24" viewBox="0 0 200 24">
+                <line x1="0" y1="12" x2="80" y2="12" stroke="#C9A84C" stroke-width="0.7" opacity="0.6"/>
+                <circle cx="100" cy="12" r="4" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.7"/>
+                <circle cx="100" cy="12" r="1.5" fill="#C9A84C" opacity="0.7"/>
+                <line x1="120" y1="12" x2="200" y2="12" stroke="#C9A84C" stroke-width="0.7" opacity="0.6"/>
+            </svg>
+
+            <div class="couple_grid reveal">
+                <div class="couple-card">
+                    <div class="couple-avatar">A</div>
+                    <div class="couple-name">Alex Hidayatullah</div>
+                    <div class="couple-parent">
+                        <strong>Putra dari</strong>
+                        Bapak &amp; Ibu<br>
+                        <em>- Alm. Abd karim & Almh. Nawemah -</em>
+                    </div>
+                </div>
+
+                <div class="couple-ampersand">&</div>
+
+                <div class="couple-card">
+                    <div class="couple-avatar">S</div>
+                    <div class="couple-name">Syanti Royani</div>
+                    <div class="couple-parent">
+                        <strong>Putri dari</strong>
+                        Bapak &amp; Ibu<br>
+                        <em>- Matbegri & Nur -</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gold-line reveal"></div>
+
+            <p class="body-text reveal">
+                "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
+                pasangan hidup dari jenismu sendiri supaya kamu cenderung dan merasa tentram kepadanya."
+                <br><small style="display: block;margin-top: 0.5rem;font-size: 0.85rem;opacity: 0.65;">- Q.S. Ar-Rum: 21 -</small>
+            </p>
+        </div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section id="event">
+        <div class="section-inner">
+            <span class="section-tag reveal">Rangkuman Acara</span>
+            <h2 class="section-tittle reveal">Turut mengundang <em>kehandiran anda</em></h2>
+            <div class="gold-line reveal"></div>
+
+            <div class="event-cards">
+                <div class="event-card reveal">
+                    <div class="event-icon">🌙</div>
+                    <div class="event-type">Malam Le'mellek</div>
+                    <div class="event-title">Le'mellek</div>
+                    <div class="event-info">
+                        <strong>Sabtu malam Minggu, 30 Mei 2026</strong>
+                        Pukul 19.00 WIB (ba'da Isyak) - Selesai<br><br>
+                        <strong>Rumah Kami</strong>
+                        Jl. Raya Gunung eleh Kedungdung Sampang<br>Guntara
+                    </div>
+                </div>
+
+                <div class="event-card reveal" style="transition-delay: 0.15s;">
+                    <div class="event-icon">🥂</div>
+                    <div class="event-type">Resepsi Pernikahan</div>
+                    <div class="event-title">Wedding Dinner</div>
+                    <div class="event-info">
+                        <strong>Minggu, 31 Mei 2026</strong>
+                        Pukul 12.00 WIB - Selesai<br><br>
+                        <strong>Rumah Kami</strong>
+                        Dsn. Palampean, Gunung Eleh Kedungdung Sampang<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section id="countdown">
+        <div class="section-inner">
+            <span class="section-tag reveal">Menuju Hari Bahagia</span>
+            <h2 class="section-tittle reveal">Hitung Mundur</h2>
+            <div class="gold-line reveal"></div>
+
+            <div class="countdown-grid reveal">
+                <div class="countdown-box">
+                    <span class="countdown-num" id="cd-days">00</span>
+                    <span class="countdown-label">Hari</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num" id="cd-hours">00</span>
+                    <span class="countdown-label">Jam</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num" id="cd-mins">00</span>
+                    <span class="countdown-label">Menit</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num" id="cd-secs">00</span>
+                    <span class="countdown-label">Detik</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="section-inner">
+            <span class="section-tag reveal">Momen Bersama</span>
+            <h2 class="section-tittle reveal">Galeri <em>Foto</em></h2>
+            <div class="gold-line reveal"></div>
+        </div>
+
+        <div class="gallery-grid reveal" style="max-width: 780px;margin: 3rem auto 0;">
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <img src="foto1.jpg" alt="Foto 1"
+                        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <img src="foto2.jpg" alt="Foto 2"
+                        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <img src="foto3.jpg" alt="Foto 3"
+                        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <img src="foto4.jpg" alt="Foto 4"
+                        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <img src="foto5.jpg" alt="Foto 5"
+                        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+                </div>
+            </div>
+        </div>
+        <p class="gallery-caption reveal">- Alex &amp; Syanti -</p>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+        <div class="section-inner">
+            <span class="section-tag reveal">Konfirmasi Kehadiran</span>
+            <h2 class="section-tittle reveal">RSVP <em>Undangan</em></h2>
+            <div class="gold-line reveal"></div>
+            <p class="body-text reveal" style="font-size: 0.95rem;">
+                Mohon konfirmasi kehadiran anda
+            </p>
+
+            <div class="rsvp-form reveal">
+                <div class="rsvp-form-inner">
+                    <div class="form-group">
+                        <label class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-input" id="rsvp-name" placeholder="Masukkan nama anda..."/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Nomor HP / WhatsApp</label>
+                        <input type="tel" class="form-input" id="rsvp-phone" placeholder="08xx-xxxx-xxxx"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Jumlah Tamu</label>
+                        <select class="form-select" id="rsvp-guests">
+                            <option value="">- Pilih Jumlah -</option>
+                            <option value="1">1 orang</option>
+                            <option value="2">2 orang</option>
+                            <option value="3">3 orang</option>
+                            <option value="4">4 orang</option>
+                            <option value="5">5 orang atau lebih</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Konfirmasi Kehadiran</label>
+                        <div class="form-radio-group">
+                            <label class="form-radio" id="radio-hadir" onclick="selectRadio('hadir')">
+                                <input type="radio" name="hadir" value="hadir"/>
+                                <span class="radio-icon">✅</span> Hadir
+                            </label>
+                            <label class="form-radio" id="radio-tidak" onclick="selectRadio('tidak')">
+                                <input type="radio" name="tidak" value="tidak"/>
+                                <span class="radio-icon">❌</span> Tidak Hadir
+                            </label>
+                            <label class="form-radio" id="radio-mungkin" onclick="selectRadio('mungkin')">
+                                <input type="radio" name="hadir" value="mungkin"/>
+                                <span class="radio-icon">🤔</span> Mungkin
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Ucapan & Doa</label>
+                        <textarea class="form-textarea" id="rsvp-msg" placeholder="Tuliskan ucapan selamat atau doa untuk kedua mempelai..."></textarea>
+                    </div>
+
+                    <button class="submit-btn" onclick="submitRSVP()">✦ Kirim Konfirmasi ✦</button>
+                </div>
+
+                <div class="rsvp-succes" id="rsvp-succes">
+                    <div class="check">✦</div>
+                    <h3>Terima Kasih!</h3>
+                    <p style="color: var(--brown-light);font-style: italic;">Konfirmasi kehadiran anda telah kami terima.<br>Kami menantikan kehadiran Ana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP -->
+    <section id="map-section">
+        <div class="section-inner">
+            <span class="section-tag reveal">Lokasi Acara</span>
+            <h2 class="section-tittle reveal">Temukan <em>Kami</em> di Sini</h2>
+            <div class="gold-line reveal"></div>
+        </div>
+
+        <div class="map-wrapper reveal" style="max-width: 780px;margin: 3rem auto0;">
+            <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=113.2586%2C-7.0604%2C113.2886%2C-7.0304&layer=mapnik&marker=-7.0454%2C113.2736"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Lokasi Pernikahan Alex & Syanti">
+            </iframe>
+            <div class="map-address">
+                <div>
+                    <div class="map-venue">Guntara</div>
+                    <div class="map-addr-text">Jl. Raya Gunung eleh Kedungdung Sampang</div>
+                </div>
+                <a class="map-btn" href="https://maps.google.com/?q=-7.0454,113.2736" target="_blank" rel="noopener">
+                    🗺 Buka Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+     <footer>
+        <svg width="200" height="24" viewBox="0 0 200 24" style="display:block;margin: 0 auto 2rem;opacity: 0.35;">
+            <line x1="0" y1="12" x2="75" y2="12" stroke="#C9A84C" stroke-width="0.7"/>
+        </svg>
+
+        <div class="footer-names">Alex <span>&</span> Syanti</div>
+        <div class="cover-divider" style="margin: 1rem auto;"></div>
+
+        <p class="footer-msg">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami<br>
+            apabila Bapak/Ibu/Saudara/i berkenan hadir<br>
+            memberikan doa restu kepada kami.
+        </p>
+
+        <p class="footer-copy" style="margin-top: 3rem;">
+            Made with ♥ — Alex & Syanti Wedding 2026
+        </p>
+     </footer>
+     
+</div><!--/main-->
+
+<script>
+    /* ── OPEN INVITATION ── */
+    function openInvitation() {
+        const cover = document.getElementById('cover');
+        const main = document.getElementById('main');
+        cover.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        cover.style.opacity = '0';
+        cover.style.transform = 'scale(1.03)';
+        setTimeout(() => {
+            cover.style.display ='none';
+            main.style.display = 'block';
+            setTimeout(() => {
+                main.style.opacity = '1';
+                initReveal();
+                initCountdown();
+            }, 50);
+        }, 800);
+    }
+
+    /* ── SCROLL REVEAL ── */
+    function initReveal() {
+        const els = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        els.forEach(el => io.observe(el));
+    }
+
+    /* ── COUNTDOWN TIMER ── */
+    function initCountdown() {
+        const target = new Date('2026-05-31T08:00:00').getTime();
+
+        function update() {
+            const now = Date.now();
+            const diff = target - now;
+
+            if (diff <= 0) {
+                document.getElementById('cd-days').textContent = '00';
+                document.getElementById('cd-hours').textContent = '00';
+                document.getElementById('cd-mins').textContent = '00';
+                document.getElementById('cd-secs').textContent = '00';
+                return;
+            }
+
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+
+            document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+            document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+            document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+            document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+        }
+
+        update();
+        setInterval(update, 1000);
+    }
+
+    /* ── RSVP RADIO ── */
+    let selectedRadio = null;
+ 
+    function selectRadio(val) {
+        ['hadir','tidak','mungkin'].forEach(v => {
+            document.getElementById('radio-' + v).classList.remove('selected');
+        });
+        document.getElementById('radio-' + val).classList.add('selected');
+        selectedRadio = val;
+    }
+
+    /* ── RSVP SUBMIT ── */
+    function submitRSVP() {
+        const name   = document.getElementById('rsvp-name').value.trim();
+        const phone  = document.getElementById('rsvp-phone').value.trim();
+        const guests = document.getElementById('rsvp-guests').value;
+ 
+        if (!name) { alert('Mohon masukkan nama Anda.'); return; }
+        if (!guests) { alert('Mohon pilih jumlah tamu.'); return; }
+        if (!selectedRadio) { alert('Mohon pilih konfirmasi kehadiran.'); return; }
+ 
+        document.getElementById('rsvp-form-inner').style.display = 'none';
+        document.getElementById('rsvp-success').style.display = 'block';
+    }
+</script>
+</body>
+</html>
